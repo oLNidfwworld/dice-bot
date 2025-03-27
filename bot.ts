@@ -46,6 +46,7 @@ async function generateImages() {
   await Promise.all(promises);
   console.log("images generated");
 }
+
 async function generateD20Image(faceNumber: number, options?: {}) {
   const image = await nodeHtmlToImage({
     output: `./assets/img/dices/d${faceNumber}.png`,
@@ -72,6 +73,5 @@ async function generateD20Image(faceNumber: number, options?: {}) {
   });
   return image;
 }
-
 
 main();
