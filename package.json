@@ -1,0 +1,14 @@
+{
+	"scripts": {
+		"build-start": "npx tsc -p ./src/bot.ts && node --env-file=.env ./dist/bot.js"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.14",
+		"typescript": "^5.8.2"
+	},
+	"dependencies": {
+		"canvas": "^3.1.0",
+		"grammy": "^1.35.1",
+		"node-html-to-image": "^5.0.0"
+	}
+}
