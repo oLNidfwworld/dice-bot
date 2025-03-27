@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"build-start": "npx tsc -p ./src/bot.ts && node --env-file=.env ./dist/bot.js"
+		"build-start": "npx tsc && node --env-file=.env ./dist/bot.js"
 	},
 	"devDependencies": {
 		"@types/node": "^22.13.14",
