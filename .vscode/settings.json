@@ -1,0 +1,4 @@
+{
+    "eslint.validate": ["typescript", "javascript"],
+    "eslint.lintTask.enable": true
+}
