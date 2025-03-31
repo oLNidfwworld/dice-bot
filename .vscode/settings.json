@@ -1,4 +1,6 @@
 {
     "eslint.validate": ["typescript", "javascript"],
-    "eslint.lintTask.enable": true
+    "eslint.lintTask.enable": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

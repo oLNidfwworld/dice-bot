@@ -1,1 +1,1 @@
-export type UserDiceStats = Record<string, Array<string>>
+export type UserDiceStats = Record<string, Array<string>>;

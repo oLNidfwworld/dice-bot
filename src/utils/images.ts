@@ -1,9 +1,9 @@
-import nodeHtmlToImage from "node-html-to-image";
+import nodeHtmlToImage from 'node-html-to-image';
 
 export async function generateD20Image(faceNumber: number) {
-  const image = await nodeHtmlToImage({
-    output: `./assets/img/dices/d${faceNumber}.png`,
-    html: `
+   const image = await nodeHtmlToImage({
+      output: `./assets/img/dices/d${faceNumber}.png`,
+      html: `
           <html style="">
               <head></head>
               <body style="
@@ -27,8 +27,8 @@ export async function generateD20Image(faceNumber: number) {
               </body>
           </html>
               `,
-  });
-  return image;
+   });
+   return image;
 }
 
 // async function checkImagesInFolder() {

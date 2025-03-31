@@ -1,7 +1,6 @@
- 
-export async function getStats(){  
-    // TODO: do
+export async function getStats() {
+   // TODO: do
 }
-export function setStats(){  
-    // TODO: do\
+export function setStats() {
+   // TODO: do\
 }

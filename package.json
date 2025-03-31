@@ -1,31 +1,31 @@
 {
-	"scripts": {
-		"build-start": "npx tsc && node --env-file=.env ./dist/bot.js",
-		"build": "npx tsc ",
-		"lint": " eslint src/**/*.ts ",
-		"format": " eslint src/**/*.ts --fix "
-	},
-	"devDependencies": {
-		"@eslint/js": "^9.23.0",
-		"@types/node": "^22.13.14",
-		"@typescript-eslint/eslint-plugin": "^8.28.0",
-		"@typescript-eslint/parser": "^8.28.0",
-		"eslint": "^9.23.0",
-		"globals": "^16.0.0",
-		"husky": "^9.1.7",
-		"prettier": "3.5.3",
-		"typescript": "^5.8.2",
-		"typescript-eslint": "^8.28.0"
-	},
-	"dependencies": {
-		"@grammyjs/commands": "^1.0.5",
-		"canvas": "^3.1.0",
-		"grammy": "^1.35.1",
-		"node-html-to-image": "^5.0.0"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "pnpm lint"
-		}
-	}
+   "scripts": {
+      "build-start": "npx tsc && node --env-file=.env ./dist/bot.js",
+      "build": "npx tsc ",
+      "lint": " eslint src/**/*.ts ",
+      "format": " eslint src/**/*.ts --fix "
+   },
+   "devDependencies": {
+      "@eslint/js": "^9.23.0",
+      "@types/node": "^22.13.14",
+      "@typescript-eslint/eslint-plugin": "^8.28.0",
+      "@typescript-eslint/parser": "^8.28.0",
+      "eslint": "^9.23.0",
+      "globals": "^16.0.0",
+      "husky": "^9.1.7",
+      "prettier": "3.5.3",
+      "typescript": "^5.8.2",
+      "typescript-eslint": "^8.28.0"
+   },
+   "dependencies": {
+      "@grammyjs/commands": "^1.0.5",
+      "canvas": "^3.1.0",
+      "grammy": "^1.35.1",
+      "node-html-to-image": "^5.0.0"
+   },
+   "husky": {
+      "hooks": {
+         "pre-commit": "pnpm lint"
+      }
+   }
 }

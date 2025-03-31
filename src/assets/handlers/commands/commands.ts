@@ -1,17 +1,17 @@
-import { CommandGroup } from "@grammyjs/commands";
-import { Context } from "grammy";
-import { createReplyOptions } from "../../../utils/replyUtils";
+import { CommandGroup } from '@grammyjs/commands';
+import { Context } from 'grammy';
+import { createReplyOptions } from '../../../utils/replyUtils';
 
 export const registerCommandsCommand = (commandGroup: CommandGroup<Context>) =>
-  commandGroup.command("commands", "Команды бота", async (ctx) => {
-    try {
-      await ctx.reply(
-        ` 
+   commandGroup.command('commands', 'Команды бота', async (ctx) => {
+      try {
+         await ctx.reply(
+            ` 
             Команды бота:\nпока только...\n\n/dice - Крутите кубэк d20\n/commands - Команды бота
           `,
-        { ...createReplyOptions(ctx.message?.message_id) }
-      );
-    } catch (e) {
-      console.error(e);
-    }
-  });
+            { ...createReplyOptions(ctx.message?.message_id) },
+         );
+      } catch (e) {
+         console.error(e);
+      }
+   });
