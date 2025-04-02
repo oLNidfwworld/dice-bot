@@ -21,13 +21,14 @@ jobs:
          - name: Коммит сборки в ветку release
            run: |
               git config --global user.name "github-actions[bot]"
-              git config --global user.email "github-actions[bot]@users.noreply.github.com"
-              git checkout release
-              git pull origin release
-              cp -r dist/* .
-              git add .
-              git commit -m "Deploy build for release ${{ github.event.release.tag_name }}"
-              git push origin release
+                git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                git fetch origin
+                git checkout -b release origin/release || git checkout release
+                git pull origin release
+                cp -r dist/* .
+                git add .
+                git commit -m "Deploy build for release ${{ github.event.release.tag_name }}"
+                git push origin release
    deploy:
       needs: build
       runs-on: ubuntu-latest
