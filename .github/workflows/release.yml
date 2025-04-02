@@ -45,4 +45,4 @@ jobs:
               key: ${{ secrets.SSH_KEY }}
               script: |
                  cd /home/web/projects/dice-bot
-                 sourec ./update.sh
+                 source ./update.sh
