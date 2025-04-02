@@ -39,7 +39,7 @@ jobs:
               username: ${{ secrets.SSH_USER }}
               key: ${{ secrets.SSH_KEY }}
               script: |
-                 cd /var/www/project
+                 cd /home/web/projects
                  git pull origin release
                  npm install --production
                  pm2 restart project
