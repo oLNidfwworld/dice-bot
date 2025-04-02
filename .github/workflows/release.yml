@@ -1,0 +1,45 @@
+name: 'Realese build and deploy'
+
+on:
+   release:
+      types: [released]
+jobs:
+   build:
+      runs-on: ubuntu-latest
+      strategy:
+         matrix:
+            node-version: [22.14.0]
+      steps:
+         - name: 'Checkout repo'
+           uses: actions/checkout@v4
+         - name: Install pnpm
+           uses: pnpm/action-setup@v4
+           with:
+              version: 10
+         - name: 'Dependencies install'
+           run: pnpm install --frozen-lockfile
+         - name: Коммит сборки в ветку release
+           run: |
+              git config --global user.name "github-actions[bot]"
+              git config --global user.email "github-actions[bot]@users.noreply.github.com"
+              git checkout release
+              git pull origin release
+              cp -r dist/* .
+              git add .
+              git commit -m "Deploy build for release ${{ github.event.release.tag_name }}"
+              git push origin release
+   deploy:
+      needs: build
+      runs-on: ubuntu-latest
+      steps:
+         - name: Deploy to Server
+           uses: appleboy/ssh-action@v1.0.3
+           with:
+              host: ${{ secrets.SSH_HOST }}
+              username: ${{ secrets.SSH_USER }}
+              key: ${{ secrets.SSH_KEY }}
+              script: |
+                 cd /var/www/project
+                 git pull origin release
+                 npm install --production
+                 pm2 restart project
