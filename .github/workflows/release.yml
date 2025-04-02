@@ -17,6 +17,8 @@ jobs:
            with:
               version: 10
          - name: 'Dependencies install'
+           run: pnpm run build
+         - name: 'Dependencies install'
            run: pnpm install --frozen-lockfile
          - name: Коммит сборки в ветку release
            run: |
