@@ -9,7 +9,7 @@ export const registerDiceCommand = (commandGroup: CommandGroup<Context>) =>
       const i = await rollDice(ctx);
       console.log(ctx.message?.from.id);
       try {
-         await ctx.replyWithSticker(emojis[i], {
+         await ctx.replyWithSticker(emojis[i - 1], {
             ...createReplyOptions(ctx.message?.message_id),
          });
       } catch (e) {

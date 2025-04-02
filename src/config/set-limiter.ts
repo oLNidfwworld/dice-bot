@@ -1,6 +1,6 @@
 import { limit } from '@grammyjs/ratelimiter';
 import { Bot } from 'grammy';
-import createReplyOptions from '../utils/reply-utils';
+import { createReplyOptions } from '../utils/reply-utils';
 
 export default (bot: Bot) =>
    bot.use(

@@ -1,4 +1,4 @@
-export default function createReplyOptions(messageId?: number) {
+export function createReplyOptions(messageId?: number) {
    if (!messageId) {
       return {};
    }

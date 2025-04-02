@@ -2,7 +2,7 @@ import { CommandGroup } from '@grammyjs/commands';
 import { Context } from 'grammy';
 
 import { getStats } from '../../services/stats';
-import createReplyOptions from '../../utils/reply-utils';
+import { createReplyOptions } from '../../utils/reply-utils';
 
 export const registerStatsCommand = (commandGroup: CommandGroup<Context>) =>
    commandGroup.command('stats', 'Ваша статистика', async (ctx) => {
@@ -13,7 +13,7 @@ export const registerStatsCommand = (commandGroup: CommandGroup<Context>) =>
             avg: stats.reduce((acc, item) => acc + item.result, 0) / stats.length,
          };
          await ctx.reply(
-            `Ваша статистика:\n\nВсего бросков: ${stat.count}\nСредний результат: ${stat.avg}
+            `Ваша статистика:\n\nВсего бросков: ${stat.count}\nСредний результат: ${stat.avg ?? 'Нет результатов'}
           `,
             { ...createReplyOptions(ctx.message?.message_id) },
          );
