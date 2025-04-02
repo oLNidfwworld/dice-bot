@@ -18,6 +18,8 @@ jobs:
               version: 10
          - name: 'Dependencies install'
            run: pnpm install --frozen-lockfile
+         - name: 'Init prisma'
+           run: npx prisma generate
          - name: 'Build project'
            run: pnpm run build
          - name: Коммит сборки в ветку release
