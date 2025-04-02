@@ -1,7 +1,8 @@
 import { CommandGroup } from '@grammyjs/commands';
 import { Context } from 'grammy';
-import { createReplyOptions } from '../../utils/reply-utils';
+
 import { getStats } from '../../services/stats';
+import createReplyOptions from '../../utils/reply-utils';
 
 export const registerStatsCommand = (commandGroup: CommandGroup<Context>) =>
    commandGroup.command('stats', 'Ваша статистика', async (ctx) => {

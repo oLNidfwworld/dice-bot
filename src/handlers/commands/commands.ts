@@ -1,6 +1,6 @@
 import { CommandGroup } from '@grammyjs/commands';
 import { Context } from 'grammy';
-import { createReplyOptions } from '../../utils/reply-utils';
+import createReplyOptions from '../../utils/reply-utils';
 
 export const registerCommandsCommand = (commandGroup: CommandGroup<Context>) =>
    commandGroup.command('commands', 'Команды бота', async (ctx) => {
