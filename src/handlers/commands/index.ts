@@ -2,6 +2,7 @@ import { Bot } from 'grammy';
 import { CommandGroup } from '@grammyjs/commands';
 import { registerDiceCommand } from './dice';
 import { registerCommandsCommand } from './commands';
+import { registerStatsCommand } from './stats';
 
 export async function registerCommands(bot: Bot) {
    const commandGroup = new CommandGroup();
@@ -9,6 +10,7 @@ export async function registerCommands(bot: Bot) {
    // Регистрация команд
    registerDiceCommand(commandGroup);
    registerCommandsCommand(commandGroup);
+   registerStatsCommand(commandGroup);
 
    // Применение команд к боту
    bot.use(commandGroup);

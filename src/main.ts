@@ -1,13 +1,13 @@
 import { Bot } from 'grammy';
-import { registerCommands } from './assets/handlers/commands';
-import { checkEnvConfig } from './config/checkEnv';
-import { getStats } from './services/stats';
+import { registerCommands } from './handlers/commands';
+import { checkEnvConfig } from './config/check-env';
+import setLimiter from './config/set-limiter';
 
 export default async function () {
-   getStats();
    const apiToken = checkEnvConfig();
 
    const bot = new Bot(apiToken);
+   setLimiter(bot);
 
    registerCommands(bot);
 

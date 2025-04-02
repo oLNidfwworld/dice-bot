@@ -11,6 +11,12 @@ importers:
       '@grammyjs/commands':
         specifier: ^1.0.5
         version: 1.0.5(grammy@1.35.1)
+      '@grammyjs/ratelimiter':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@prisma/client':
+        specifier: 6.5.0
+        version: 6.5.0(prisma@6.5.0(typescript@5.8.2))(typescript@5.8.2)
       canvas:
         specifier: ^3.1.0
         version: 3.1.0
@@ -258,6 +264,9 @@ packages:
     peerDependencies:
       grammy: ^1.17.1
 
+  '@grammyjs/ratelimiter@1.2.1':
+    resolution: {integrity: sha512-4bmVUBCBnIb2epbDiBLCvvnVjaYg7kDCPR1Ptt6gqoxm5vlD8BjainYv+yjF6221hu2KUv8QAckumDI+6xyGsQ==}
+
   '@grammyjs/types@3.19.0':
     resolution: {integrity: sha512-N0MS+RJG+AGSNuka1GWVj88oyK1oti4I0eQq6jGo4hic3P9MwFfnHjGQuIExZ3tlJUrZYwC/T7gk4Tu3+guJyg==}
 
@@ -292,6 +301,18 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@prisma/client@6.5.0':
+    resolution: {integrity: sha512-M6w1Ql/BeiGoZmhMdAZUXHu5sz5HubyVcKukbLs3l0ELcQb8hTUJxtGEChhv4SVJ0QJlwtLnwOLgIRQhpsm9dw==}
+    engines: {node: '>=18.18'}
+    peerDependencies:
+      prisma: '*'
+      typescript: '>=5.1.0'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+      typescript:
+        optional: true
 
   '@prisma/config@6.5.0':
     resolution: {integrity: sha512-sOH/2Go9Zer67DNFLZk6pYOHj+rumSb0VILgltkoxOjYnlLqUpHPAN826vnx8HigqnOCxj9LRhT6U7uLiIIWgw==}
@@ -1383,6 +1404,8 @@ snapshots:
     dependencies:
       grammy: 1.35.1
 
+  '@grammyjs/ratelimiter@1.2.1': {}
+
   '@grammyjs/types@3.19.0': {}
 
   '@humanfs/core@0.19.1': {}
@@ -1409,6 +1432,11 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
+
+  '@prisma/client@6.5.0(prisma@6.5.0(typescript@5.8.2))(typescript@5.8.2)':
+    optionalDependencies:
+      prisma: 6.5.0(typescript@5.8.2)
+      typescript: 5.8.2
 
   '@prisma/config@6.5.0':
     dependencies:
